@@ -11,7 +11,7 @@ build:
 
 # Push the docker image
 release:
-	docker buildx build -t $(IMAGE_REPOSITORY)/virtvnc:v0.2 --platform=$(ARCH) . --push
+	docker buildx build -t $(IMAGE_REPOSITORY)/virtvnc:v0.2 --provenance=false --platform=$(ARCH) . --push
 
 buildx:
 	@docker run --privileged --rm $(IMAGE_REPOSITORY)/binfmt --uninstall qemu-* && \
